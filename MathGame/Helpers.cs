@@ -1,4 +1,4 @@
-﻿namespace math_game;
+﻿namespace MathGame;
 
 public static class Helpers
 {
@@ -18,26 +18,27 @@ public static class Helpers
             WrongAnswers = wrongAnswers,
         });
     }
-    public static void ShowLastGameResult(string gameType, int correctAnswers, int wrongAnswers)
+    public static void ShowGameResult(string gameType, int correctAnswers, int wrongAnswers)
     {
         Console.Clear();
         Console.WriteLine(gameType);
         Console.WriteLine($"Correct answers: {correctAnswers}\tWrong answers: {wrongAnswers}");
-        Console.WriteLine("Thank you for playing!");
+        Console.WriteLine("Press any key to go back to main menu...");
+        Console.ReadKey();
     }
 
     public static void ShowGameHistory()
     {
         Console.Clear();
         Console.WriteLine("Game History:");
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         foreach (Game game in _gameHistory)
         {
             Console.WriteLine(game);
         }
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         
-        Console.WriteLine("Press any key to go back to main menu");
+        Console.WriteLine("Press any key to go back to main menu...");
         Console.ReadKey();
     }
 }

@@ -1,4 +1,4 @@
-﻿using math_game;
+﻿using MathGame;
 
 DateTime date = DateTime.Now;
 string name = GetName();
@@ -10,7 +10,7 @@ menu.ShowMenu(date, name);
 
 string GetName()
 {
-    Console.Write("Enter your name (Press enter to use default name \"Player\"): ");
+    Console.Write("Enter your name to start the game (press enter to use default name \"Player\"): ");
     string? s = Console.ReadLine();
     if (s.Equals(""))
     {

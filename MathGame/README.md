@@ -1,10 +1,18 @@
 # Math Game
 
-(Project from [C# Academy](https://www.thecsharpacademy.com/project/53/math-game))
+Project from [C# Academy](https://www.thecsharpacademy.com/project/53/math-game))
 
-## Requirements
-- You need to create a Math game containing the 4 basic operations.
-- The divisions should result on INTEGERS ONLY and dividends should go from 0 to 100. Example: Your app shouldn't present the division 7/2 to the user, since it doesn't result in an integer.
-- Users should be presented with a menu to choose an operation.
-- You should record previous games in a List and there should be an option in the menu for the user to visualize a history of previous games.
-- You don't need to record results on a database. Once the program is closed the results will be deleted.
+## Gameplay
+(Gameplay gif here)
+
+## Description
+- A main menu where you can choose what kind of game to play (addition, subtraction, multiplication, division)
+- Divisions are integer only.
+- View all past game history (quitting the game will delete history).
+
+## TODO
+- Able to choose different levels of difficulty.
+- Add timer.
+- Random game option (all 4 operations) with different levels of difficulty.
+
+

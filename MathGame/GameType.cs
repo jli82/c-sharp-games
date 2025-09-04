@@ -1,4 +1,4 @@
-﻿namespace math_game;
+﻿namespace MathGame;
 
 public enum GameType
 {

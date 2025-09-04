@@ -1,4 +1,4 @@
-﻿namespace math_game;
+﻿namespace MathGame;
 
 public class GameEngine
 {
@@ -8,7 +8,7 @@ public class GameEngine
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Addition Game! Press q to quit.");
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -36,6 +36,8 @@ public class GameEngine
                 
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
+                    Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
+                    Helpers.ShowGameResult("Addition Game Results", correctAnswers, wrongAnswers);
                     return;
                 }
             }
@@ -52,18 +54,18 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine(new string('-', Console.WindowWidth/2));
         }
         
         Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
-        Helpers.ShowLastGameResult("Addition Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowGameResult("Addition Game Results", correctAnswers, wrongAnswers);
     }
 
     public void SubtractionGame() 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Subtraction Game! Press q to quit.");
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -107,18 +109,18 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine(new string('-', Console.WindowWidth/2));
         }
         
         Helpers.AddGameResult(GameType.Subtraction, correctAnswers, wrongAnswers);
-        Helpers.ShowLastGameResult("Subtraction Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowGameResult("Subtraction Game Results", correctAnswers, wrongAnswers);
     }
 
     public void MultiplicationGame() 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Multiplication Game! Press q to quit.");
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -162,18 +164,18 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine(new string('-', Console.WindowWidth/2));
         }
         
         Helpers.AddGameResult(GameType.Multiplication, correctAnswers, wrongAnswers);
-        Helpers.ShowLastGameResult("Multiplication Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowGameResult("Multiplication Game Results", correctAnswers, wrongAnswers);
     }
 
     public void DivisionGame() 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Division Game! Press q to quit.");
-        Console.WriteLine("-----------------------------------------------------------------------");
+        Console.WriteLine(new string('-', Console.WindowWidth/2));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -222,10 +224,10 @@ public class GameEngine
             }
             
             questionNumber++;
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Console.WriteLine(new string('-', Console.WindowWidth/2));
         }
         
         Helpers.AddGameResult(GameType.Division, correctAnswers, wrongAnswers);
-        Helpers.ShowLastGameResult("Division Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowGameResult("Division Game Results", correctAnswers, wrongAnswers);
     }
 }
