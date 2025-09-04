@@ -8,7 +8,7 @@ public class GameEngine
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Addition Game! Press q to quit.");
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -54,7 +54,7 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+            Console.WriteLine(new string('-', 100));
         }
         
         Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
@@ -65,7 +65,7 @@ public class GameEngine
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Subtraction Game! Press q to quit.");
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -109,7 +109,7 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+            Console.WriteLine(new string('-', 100));
         }
         
         Helpers.AddGameResult(GameType.Subtraction, correctAnswers, wrongAnswers);
@@ -120,7 +120,7 @@ public class GameEngine
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Multiplication Game! Press q to quit.");
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -164,7 +164,7 @@ public class GameEngine
             }
                 
             questionNumber++;
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+            Console.WriteLine(new string('-', 100));
         }
         
         Helpers.AddGameResult(GameType.Multiplication, correctAnswers, wrongAnswers);
@@ -175,7 +175,7 @@ public class GameEngine
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Division Game! Press q to quit.");
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         
         int questionNumber = 1;
         int correctAnswers = 0;
@@ -224,7 +224,7 @@ public class GameEngine
             }
             
             questionNumber++;
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+            Console.WriteLine(new string('-', 100));
         }
         
         Helpers.AddGameResult(GameType.Division, correctAnswers, wrongAnswers);

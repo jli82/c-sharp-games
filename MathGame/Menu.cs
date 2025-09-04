@@ -10,16 +10,16 @@ public class Menu
         while (!_quitGame)
         {
             Console.Clear();
-            Console.Write(new string('-', Console.WindowWidth/2));
+            Console.Write(new string('-', 100));
             Console.WriteLine(@$"
-                   ····························································
-                   :  __  __       _   _           ____                       :
-                   : |  \/  | __ _| |_| |__       / ___| __ _ _ __ ___   ___  :
-                   : | |\/| |/ _` | __| '_ \     | |  _ / _` | '_ ` _ \ / _ \ :
-                   : | |  | | (_| | |_| | | |    | |_| | (_| | | | | | |  __/ :
-                   : |_|  |_|\__,_|\__|_| |_|     \____|\__,_|_| |_| |_|\___| :
-                   ····························································");
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+                    ····························································
+                    :  __  __       _   _           ____                       :
+                    : |  \/  | __ _| |_| |__       / ___| __ _ _ __ ___   ___  :
+                    : | |\/| |/ _` | __| '_ \     | |  _ / _` | '_ ` _ \ / _ \ :
+                    : | |  | | (_| | |_| | | |    | |_| | (_| | | | | | |  __/ :
+                    : |_|  |_|\__,_|\__|_| |_|     \____|\__,_|_| |_| |_|\___| :
+                    ····························································");
+            Console.WriteLine(new string('-', 100));
             Console.WriteLine($"Date: {date}");
             Console.WriteLine($"Hello {name}, welcome to the Math Game!\n");
             
@@ -27,7 +27,7 @@ public class Menu
             Console.WriteLine(
                 "1 - Addition\n2 - Subtraction\n3 - Multiplication\n4 - Division\n5 - History\n6 - Quit Game " +
                 "(Will Erase Game History)");
-            Console.WriteLine(new string('-', Console.WindowWidth/2));
+            Console.WriteLine(new string('-', 100));
 
             bool validInput;
             int gameSelected;
@@ -59,10 +59,10 @@ public class Menu
                     if (Helpers.GameCount() == 0)
                     {
                         Console.Clear();
-                        Console.WriteLine(new string('-', Console.WindowWidth/2));
+                        Console.WriteLine(new string('-', 100));
                         Console.WriteLine("Game History is empty, please try again.");
                         Console.WriteLine("Press any key to go back to main menu...");
-                        Console.WriteLine(new string('-', Console.WindowWidth/2));
+                        Console.WriteLine(new string('-', 100));
                         Console.ReadKey();
                     }
                     else
@@ -74,9 +74,9 @@ public class Menu
                 case 6:
                     // quit option
                     Console.Clear();
-                    Console.WriteLine(new string('-', Console.WindowWidth/2));
+                    Console.WriteLine(new string('-', 100));
                     Console.WriteLine("You have quit the game, goodbye!");
-                    Console.WriteLine(new string('-', Console.WindowWidth/2));
+                    Console.WriteLine(new string('-', 100));
                     _quitGame = true;
                     break;
             }

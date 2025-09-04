@@ -31,12 +31,12 @@ public static class Helpers
     {
         Console.Clear();
         Console.WriteLine("Game History:");
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         foreach (Game game in _gameHistory)
         {
             Console.WriteLine(game);
         }
-        Console.WriteLine(new string('-', Console.WindowWidth/2));
+        Console.WriteLine(new string('-', 100));
         
         Console.WriteLine("Press any key to go back to main menu...");
         Console.ReadKey();
