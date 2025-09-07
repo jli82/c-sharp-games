@@ -9,9 +9,9 @@ public static class Helpers
         return _gameHistory.Count;
     }
     
-    public static void AddGameResult(GameType gameType, int correctAnswers, int wrongAnswers)
+    public static void AddGameResult(GameType gameType, GameDifficulty gameDifficulty, int correctAnswers, int wrongAnswers)
     {
-        _gameHistory.Add(new Game(gameType, correctAnswers, wrongAnswers, (correctAnswers + wrongAnswers)));
+        _gameHistory.Add(new Game(gameType, gameDifficulty, correctAnswers, wrongAnswers, (correctAnswers + wrongAnswers)));
     }
 
     public static void ShowLastGameResult()

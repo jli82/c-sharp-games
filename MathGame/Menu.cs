@@ -43,16 +43,16 @@ public class Menu
             switch (gameSelected)
             {
                 case 1:
-                    _gameEngine.AdditionGame();
+                    _gameEngine.AdditionGame(GetGameDifficulty());
                     break;
                 case 2:
-                    _gameEngine.SubtractionGame();
+                    _gameEngine.SubtractionGame(GetGameDifficulty());
                     break;
                 case 3:
-                    _gameEngine.MultiplicationGame();
+                    _gameEngine.MultiplicationGame(GetGameDifficulty());
                     break;
                 case 4:
-                    _gameEngine.DivisionGame();
+                    _gameEngine.DivisionGame(GetGameDifficulty());
                     break;
                 case 5:
                     // history option
@@ -80,6 +80,39 @@ public class Menu
                     _quitGame = true;
                     break;
             }
+        }
+    }
+
+    private GameDifficulty GetGameDifficulty()
+    {
+        Console.Clear();
+        Console.WriteLine(new string('-', 100));
+        Console.WriteLine("Choose a difficulty:\n1 - Easy\n2 - Medium\n3 - Hard");
+        Console.WriteLine(new string('-', 100));
+
+        int difficultySelected;
+        bool validInput;
+
+        do
+        {
+            validInput = int.TryParse(Console.ReadLine(), out difficultySelected);
+            if (!validInput || difficultySelected < 1 || difficultySelected > 3)
+            {
+                Console.WriteLine("Invalid input, please try again.");
+            }
+        } while (!validInput || difficultySelected < 1 || difficultySelected > 3);
+
+        if (difficultySelected == 1)
+        {
+            return GameDifficulty.Easy;
+        }
+        else if (difficultySelected == 2)
+        {
+            return GameDifficulty.Medium;
+        }
+        else
+        {
+            return GameDifficulty.Hard;
         }
     }
 }

@@ -4,10 +4,10 @@ public class GameEngine
 {
     private Random _random = new Random();
     
-    public void AdditionGame()
+    public void AdditionGame(GameDifficulty difficulty)
     {
         Console.Clear();
-        Console.WriteLine("Welcome to the Addition Game! Press q to quit.");
+        Console.WriteLine($"Welcome to the Addition Game (Difficulty: {difficulty})! Press q to quit.");
         Console.WriteLine(new string('-', 100));
         
         int questionNumber = 1;
@@ -16,8 +16,8 @@ public class GameEngine
 
         while (true)
         {
-            int a = _random.Next(20);
-            int b = _random.Next(20);
+            int a = _random.Next(-50, 50) * (int)difficulty;
+            int b = _random.Next(-50, 50)  * (int)difficulty;
             Console.WriteLine($"Question #{questionNumber}: {a} + {b}");
             Console.Write("Enter your answer (q to quit): ");
             string? userAnswer = Console.ReadLine();
@@ -36,7 +36,7 @@ public class GameEngine
                 
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
-                    Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
+                    Helpers.AddGameResult(GameType.Addition, difficulty, correctAnswers, wrongAnswers);
                     Helpers.ShowLastGameResult();
                     return;
                 }
@@ -57,11 +57,11 @@ public class GameEngine
             Console.WriteLine(new string('-', 100));
         }
         
-        Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
+        Helpers.AddGameResult(GameType.Addition, difficulty, correctAnswers, wrongAnswers);
         Helpers.ShowLastGameResult();
     }
 
-    public void SubtractionGame() 
+    public void SubtractionGame(GameDifficulty difficulty) 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Subtraction Game! Press q to quit.");
@@ -73,8 +73,8 @@ public class GameEngine
 
         while (true)
         {
-            int a = _random.Next(20);
-            int b = _random.Next(20);
+            int a = _random.Next(-50, 50) * (int)difficulty;
+            int b = _random.Next(-50, 50) * (int)difficulty;
             Console.WriteLine($"Question #{questionNumber}: {a} - {b}");
             Console.Write("Enter your answer (q to quit): ");
             string? userAnswer = Console.ReadLine();
@@ -93,6 +93,8 @@ public class GameEngine
                 
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
+                    Helpers.AddGameResult(GameType.Subtraction, difficulty, correctAnswers, wrongAnswers);
+                    Helpers.ShowLastGameResult();
                     return;
                 }
             }
@@ -112,11 +114,11 @@ public class GameEngine
             Console.WriteLine(new string('-', 100));
         }
         
-        Helpers.AddGameResult(GameType.Subtraction, correctAnswers, wrongAnswers);
+        Helpers.AddGameResult(GameType.Subtraction, difficulty, correctAnswers, wrongAnswers);
         Helpers.ShowLastGameResult();
     }
 
-    public void MultiplicationGame() 
+    public void MultiplicationGame(GameDifficulty difficulty) 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Multiplication Game! Press q to quit.");
@@ -128,8 +130,8 @@ public class GameEngine
 
         while (true)
         {
-            int a = _random.Next(10);
-            int b = _random.Next(10);
+            int a = _random.Next(-81, 81) * (int)difficulty;
+            int b = _random.Next(-9, 9) * (int)difficulty;
             Console.WriteLine($"Question #{questionNumber}: {a} x {b}");
             Console.Write("Enter your answer (q to quit): ");
             string? userAnswer = Console.ReadLine();
@@ -148,6 +150,8 @@ public class GameEngine
                 
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
+                    Helpers.AddGameResult(GameType.Multiplication, difficulty, correctAnswers, wrongAnswers);
+                    Helpers.ShowLastGameResult();
                     return;
                 }
             }
@@ -167,11 +171,11 @@ public class GameEngine
             Console.WriteLine(new string('-', 100));
         }
         
-        Helpers.AddGameResult(GameType.Multiplication, correctAnswers, wrongAnswers);
+        Helpers.AddGameResult(GameType.Multiplication, difficulty, correctAnswers, wrongAnswers);
         Helpers.ShowLastGameResult();;
     }
 
-    public void DivisionGame() 
+    public void DivisionGame(GameDifficulty difficulty) 
     {
         Console.Clear();
         Console.WriteLine("Welcome to the Division Game! Press q to quit.");
@@ -186,9 +190,9 @@ public class GameEngine
             int a, b;
             do
             {
-                a = _random.Next(100);
-                b = _random.Next(1, 10);
-            } while (a % b != 0);
+                a = _random.Next(-81, 81) * (int)difficulty;
+                b = _random.Next(-9, 9) * (int)difficulty;
+            } while (b == 0 || a % b != 0);
             
             Console.WriteLine($"Question #{questionNumber}: {a} / {b}");
             Console.Write("Enter your answer (q to quit): ");
@@ -208,6 +212,8 @@ public class GameEngine
                 
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
+                    Helpers.AddGameResult(GameType.Division, difficulty, correctAnswers, wrongAnswers);
+                    Helpers.ShowLastGameResult();
                     return;
                 }
             }
@@ -227,7 +233,7 @@ public class GameEngine
             Console.WriteLine(new string('-', 100));
         }
         
-        Helpers.AddGameResult(GameType.Division, correctAnswers, wrongAnswers);
+        Helpers.AddGameResult(GameType.Division, difficulty, correctAnswers, wrongAnswers);
         Helpers.ShowLastGameResult();;
     }
 }
