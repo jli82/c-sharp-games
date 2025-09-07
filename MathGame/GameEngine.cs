@@ -37,7 +37,7 @@ public class GameEngine
                 if (userAnswer?.ToLower().Trim() == "q")
                 {
                     Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
-                    Helpers.ShowGameResult("Addition Game Results", correctAnswers, wrongAnswers);
+                    Helpers.ShowLastGameResult();
                     return;
                 }
             }
@@ -58,7 +58,7 @@ public class GameEngine
         }
         
         Helpers.AddGameResult(GameType.Addition, correctAnswers, wrongAnswers);
-        Helpers.ShowGameResult("Addition Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowLastGameResult();
     }
 
     public void SubtractionGame() 
@@ -113,7 +113,7 @@ public class GameEngine
         }
         
         Helpers.AddGameResult(GameType.Subtraction, correctAnswers, wrongAnswers);
-        Helpers.ShowGameResult("Subtraction Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowLastGameResult();
     }
 
     public void MultiplicationGame() 
@@ -168,7 +168,7 @@ public class GameEngine
         }
         
         Helpers.AddGameResult(GameType.Multiplication, correctAnswers, wrongAnswers);
-        Helpers.ShowGameResult("Multiplication Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowLastGameResult();;
     }
 
     public void DivisionGame() 
@@ -228,6 +228,6 @@ public class GameEngine
         }
         
         Helpers.AddGameResult(GameType.Division, correctAnswers, wrongAnswers);
-        Helpers.ShowGameResult("Division Game Results", correctAnswers, wrongAnswers);
+        Helpers.ShowLastGameResult();;
     }
 }

@@ -11,19 +11,18 @@ public static class Helpers
     
     public static void AddGameResult(GameType gameType, int correctAnswers, int wrongAnswers)
     {
-        _gameHistory.Add(new Game
-        {
-            GameType = gameType,
-            CorrectAnswers = correctAnswers,
-            WrongAnswers = wrongAnswers,
-        });
+        _gameHistory.Add(new Game(gameType, correctAnswers, wrongAnswers, (correctAnswers + wrongAnswers)));
     }
-    public static void ShowGameResult(string gameType, int correctAnswers, int wrongAnswers)
+
+    public static void ShowLastGameResult()
     {
+        Game game = _gameHistory.Last();
         Console.Clear();
-        Console.WriteLine(gameType);
-        Console.WriteLine($"Correct answers: {correctAnswers}\tWrong answers: {wrongAnswers}");
-        Console.WriteLine("Press any key to go back to main menu...");
+        Console.WriteLine(game.GameType);
+        Console.WriteLine($"Correct answers: {game.CorrectAnswers}\tWrong answers: {game.WrongAnswers}");
+        Console.WriteLine($"Total number of questions: {game.TotalQuestions}\t" +
+                          $"Correct Percentage: {((float)game.CorrectAnswers / game.TotalQuestions):P2}");
+        Console.WriteLine("\nPress any key to go back to main menu...");
         Console.ReadKey();
     }
 
