@@ -20,6 +20,6 @@ public class Game
     public override string ToString()
     {
         string gameName = $"{GameType} ({GameDifficulty})";
-        return $"{gameName, -30}-\t{CorrectAnswers} correct \t {WrongAnswers} wrong \t Correct Percentage: {((float)CorrectAnswers / TotalQuestions):P2}";
+        return $"{gameName, -30}- \t {CorrectAnswers} correct \t {WrongAnswers} wrong \t Correct Percentage: {((float)CorrectAnswers / TotalQuestions):P2}";
     }
 }

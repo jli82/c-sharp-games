@@ -25,8 +25,8 @@ public class Menu
             
             Console.WriteLine("Which game would you like to play? Choose from the following options:");
             Console.WriteLine(
-                "1 - Addition\n2 - Subtraction\n3 - Multiplication\n4 - Division\n5 - History\n6 - Quit Game " +
-                "(Will Erase Game History)");
+                "1 - Addition\n2 - Subtraction\n3 - Multiplication\n4 - Division\n5 - Random\n" +
+                "6 - Game History\n7 - Quit Game (Will Erase Game History)");
             Console.WriteLine(new string('-', 100));
 
             bool validInput;
@@ -34,11 +34,11 @@ public class Menu
             do
             {
                 validInput = int.TryParse(Console.ReadLine(), out gameSelected);
-                if (!validInput || gameSelected < 1 || gameSelected > 6)
+                if (!validInput || gameSelected < 1 || gameSelected > 7)
                 {
                     Console.WriteLine("Invalid input, please try again.");
                 }
-            } while (!validInput || gameSelected < 1 || gameSelected > 6);
+            } while (!validInput || gameSelected < 1 || gameSelected > 7);
 
             switch (gameSelected)
             {
@@ -55,6 +55,9 @@ public class Menu
                     _gameEngine.DivisionGame(GetGameDifficulty());
                     break;
                 case 5:
+                    _gameEngine.RandomGame(GetGameDifficulty());
+                    break;
+                case 6:
                     // history option
                     if (Helpers.GameCount() == 0)
                     {
@@ -71,7 +74,7 @@ public class Menu
                     }
 
                     break;
-                case 6:
+                case 7:
                     // quit option
                     Console.Clear();
                     Console.WriteLine(new string('-', 100));
