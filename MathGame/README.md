@@ -2,15 +2,11 @@
 
 Project from [C# Academy](https://www.thecsharpacademy.com/project/53/math-game))
 
-## Gameplay
-(Gameplay gif here)
+## Gameplay Demo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/y5_STtz01Mg/0.jpg)](https://www.youtube.com/watch?v=y5_STtz01Mg)
+
 
 ## Description
 - A main menu where you can choose what kind of game to play (addition, subtraction, multiplication, division) and its difficulty.
 - Divisions are integer only.
 - View all past game history with stats (quitting the game will delete history).
-
-## TODO
-- Random game option (all 4 operations) with different levels of difficulty.
-
-
