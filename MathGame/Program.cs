@@ -1,7 +1,7 @@
 ﻿using MathGame;
 
 DateTime date = DateTime.Now;
-string name = GetName();
+string name = GetName().Trim();
 
 // Game start
 Menu menu = new Menu();

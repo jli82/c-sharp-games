@@ -28,6 +28,7 @@ public class Menu
                 "1 - Addition\n2 - Subtraction\n3 - Multiplication\n4 - Division\n5 - Random\n" +
                 "6 - Game History\n7 - Quit Game (Will Erase Game History)");
             Console.WriteLine(new string('-', 100));
+            Console.Write("Option: ");
 
             bool validInput;
             int gameSelected;
@@ -58,14 +59,14 @@ public class Menu
                     _gameEngine.RandomGame(GetGameDifficulty());
                     break;
                 case 6:
-                    // history option
+                    // game history option
                     if (Helpers.GameCount() == 0)
                     {
                         Console.Clear();
                         Console.WriteLine(new string('-', 100));
-                        Console.WriteLine("Game History is empty, please try again.");
-                        Console.WriteLine("Press any key to go back to main menu...");
+                        Console.WriteLine("Game History is empty, please finish a game first.");
                         Console.WriteLine(new string('-', 100));
+                        Console.WriteLine("\nPress any key to go back to main menu...");
                         Console.ReadKey();
                     }
                     else
@@ -92,6 +93,7 @@ public class Menu
         Console.WriteLine(new string('-', 100));
         Console.WriteLine("Choose a difficulty:\n1 - Easy\n2 - Medium\n3 - Hard");
         Console.WriteLine(new string('-', 100));
+        Console.Write("Option: ");
 
         int difficultySelected;
         bool validInput;

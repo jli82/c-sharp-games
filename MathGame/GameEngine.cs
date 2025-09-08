@@ -230,10 +230,12 @@ public class GameEngine
             
             (float userInput, float answer) = GenerateSingleQuestion(difficulty, operation, questionNumber);
             
+            // if user enter "q", then userInput=Int16.MaxValue and answer=Int16.MinValue
             if (userInput == Int16.MaxValue && answer == Int16.MinValue)
             {
                 break;
             }
+            
             if (userInput == answer)
             {
                 Console.WriteLine("Correct!");
@@ -244,7 +246,7 @@ public class GameEngine
                 Console.WriteLine("Wrong!");
                 wrongAnswers++;
             }
-                
+            
             questionNumber++;
             Console.WriteLine(new string('-', 100));
         }

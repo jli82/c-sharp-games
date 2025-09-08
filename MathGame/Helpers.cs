@@ -18,10 +18,12 @@ public static class Helpers
     {
         Game game = _gameHistory.Last();
         Console.Clear();
-        Console.WriteLine(game.GameType);
+        Console.WriteLine(new string('-', 100));
+        Console.WriteLine($"{game.GameType} Game Results:");
         Console.WriteLine($"Correct answers: {game.CorrectAnswers}\tWrong answers: {game.WrongAnswers}");
         Console.WriteLine($"Total number of questions: {game.TotalQuestions}\t" +
                           $"Correct Percentage: {((float)game.CorrectAnswers / game.TotalQuestions):P2}");
+        Console.WriteLine(new string('-', 100));
         Console.WriteLine("\nPress any key to go back to main menu...");
         Console.ReadKey();
     }
