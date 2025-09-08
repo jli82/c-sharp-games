@@ -8,5 +8,5 @@ Project from [C# Academy](https://www.thecsharpacademy.com/project/53/math-game)
 
 ## Description
 - A main menu where you can choose what kind of game to play (addition, subtraction, multiplication, division) and its difficulty.
-- Divisions are integer only.
+- Random game mode which includes all 4 operations, different difficulties also available for this mode.
 - View all past game history with stats (quitting the game will delete history).
